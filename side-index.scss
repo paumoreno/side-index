@@ -1,0 +1,48 @@
+#side-index {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    font-size: 11px;
+    padding: 0 3px;
+
+    @include flexboxMixin;
+    @include flex-direction(column);
+    @include justify-content(flex-end);
+
+    @media screen and (min-width: $midScreenBreakpoint) {
+        display: none;
+    }
+
+    ul, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        @include flexboxMixin;
+        @include flex-direction(column);
+    }
+
+    .side-index-item {
+        @include flex(1);
+        cursor: pointer;
+    }
+}
+
+#side-index-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 30px 0;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 30px;
+    @include border-radius(100%);
+}
