@@ -4,8 +4,6 @@
     $.fn.sideIndex = function(opts) {
         var $context = this,
 
-            debug = true,
-
             // Array containing a reference to all the elements in the side index.
             sideIndexElements = [],
 
@@ -22,7 +20,7 @@
 
             // Plugin default values for optional parameters
             defaults = {
-
+                debug: false,
                 // Top margin in pixels for the side index. Use it to prevent overlapping with a fixed topbar
                 indexTop: 100,
 
@@ -76,7 +74,7 @@
                 });
             });
 
-            if (debug) {
+            if (options.debug) {
                 console.log("Side index elements:");
                 $.each(sideIndexElements, function() {
                    console.log(this.pos, this.obj.data('target'));
@@ -138,7 +136,7 @@
             if (currentRef != $sideIndexElement.data('target')) {
                 currentRef = $sideIndexElement.data('target');
 
-                if (debug) {
+                if (options.debug) {
                     console.log("Moving the viewport to ", $sideIndexElement.data('target'));
                 }
 
@@ -181,7 +179,7 @@
                         i = 1;
                     }
 
-                    if (debug) {
+                    if (options.debug) {
                         console.log("Finger at Y ", y);
                         console.log("Over position " + i, sideIndexElements[i - 1].obj.data('target'));
                     }
