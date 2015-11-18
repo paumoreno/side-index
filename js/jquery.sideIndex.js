@@ -36,8 +36,7 @@
          * Gets the information of all the indexable elements of the page @asyncnd returns it in an array.
          */
         var getNavElements = function() {
-            var navElements = [],
-                $inexableElements;
+            var navElements = [];
 
             // Get the data of all the indexable elements in the document.
             $('[data-side-index]', $context).each(function() {
